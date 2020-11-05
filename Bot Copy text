@@ -1,0 +1,72 @@
+#copybot
+import pyautogui as pg
+import time
+#Pseudo code
+#-ใช้เมาส์คลิกไปยังตำแหน่งที่ต้องการ copy (ตำแหน่งด้านหน้า)
+#Point(x=656, y=109) 
+def CopyText(nextline = 0):
+
+    while nextline <= 100 :
+            
+        start_point = (757,109+nextline)
+        pg.click(start_point)
+        time.sleep(1)
+        #-ลากไปให้สุดบรรทัด
+        end_point = (981,115+nextline)
+        pg.dragTo(end_point,duration = 2)
+        time.sleep(1)
+        #-กดปุ่ม Ctrl + c เพื่อก๊อปปี้
+        pg.hotkey('ctrl','c')
+
+        #-ขยับเมาส์ไปด้านซ้าย
+        pg.click(531,109+nextline)
+
+        #-กด Ctrl + v เพื่อวางแล้วกด Enter
+        pg.hotkey('ctrl','v')
+        pg.press('enter')
+        nextline+=20
+
+# def Banana() :
+
+#     start_point = (759,133)
+#     pg.click(start_point)
+#     time.sleep(1)
+#     #-ลากไปให้สุดบรรทัด
+#     end_point = (981,133)
+#     pg.dragTo(end_point,duration = 2)
+#     time.sleep(1)
+#     #-กดปุ่ม Ctrl + c เพื่อก๊อปปี้
+#     pg.hotkey('ctrl','c')
+
+#     #-ขยับเมาส์ไปด้านซ้าย
+#     pg.click(531,133)
+
+#     #-กด Ctrl + v เพื่อวางแล้วกด Enter
+#     pg.hotkey('ctrl','v')
+#     pg.press('enter')
+
+
+# def Mango() :
+
+#     start_point = (760,153)
+#     pg.click(start_point)
+#     time.sleep(1)
+#     #-ลากไปให้สุดบรรทัด
+#     end_point = (981,153)
+#     pg.dragTo(end_point,duration = 2)
+#     time.sleep(1)
+#     #-กดปุ่ม Ctrl + c เพื่อก๊อปปี้
+#     pg.hotkey('ctrl','c')
+
+#     #-ขยับเมาส์ไปด้านซ้าย
+#     pg.click(531,153)
+
+#     #-กด Ctrl + v เพื่อวางแล้วกด Enter
+#     pg.hotkey('ctrl','v')
+#     pg.press('enter')
+
+
+CopyText()
+
+
+
